@@ -34,11 +34,18 @@
     }
 
     /* BANNER */
-    .banner img {
-      width: 100%;
-      height: 280px;
-      object-fit: cover;
-    }
+
+.banner {
+  width: 100%;
+  aspect-ratio: 16 / 6;
+  overflow: hidden;
+}
+
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
     .container {
       padding: 20px;
@@ -111,7 +118,7 @@
 
   <!-- CALL -->
   <a class="btn call" href="tel:0971282878">
-    📞 Gọi ngay: 0971 282878
+    📞 Gọi ngay: 0971 282 878
   </a>
 
   <!-- ZALO -->
@@ -127,12 +134,12 @@
   <h3 style="text-align:center; margin-top:30px;">Hình ảnh dịch vụ</h3>
 
   <div class="gallery">
-    <img src="public/img1.jpg">
-    <img src="public/img2.jpg">
-    <img src="public/img3.jpg">
-    <img src="public/img4.jpg">
-    <img src="public/img5.jpg">
-    <img src="public/img6.jpg">
+    <img src="public/img1.jpg" loading="lazy">
+    <img src="public/img2.jpg" loading="lazy">
+    <img src="public/img3.jpg" loading="lazy">
+    <img src="public/img4.jpg" loading="lazy">
+    <img src="public/img5.jpg" loading="lazy">
+    <img src="public/img6.jpg" loading="lazy">
   </div>
 
 </div>
