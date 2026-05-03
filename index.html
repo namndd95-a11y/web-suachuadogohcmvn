@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sửa Chữa Đồ Gỗ Tận Nơi</title>
+  <title>Sửa Chữa Đồ Gỗ Tận Nơi HCM</title>
 
   <style>
     body {
@@ -16,10 +16,10 @@
     header {
       background: #5a3e2b;
       color: white;
-      padding: 10px 20px;
       display: flex;
       align-items: center;
       gap: 10px;
+      padding: 10px 15px;
     }
 
     header img {
@@ -29,14 +29,14 @@
     }
 
     header h1 {
-      font-size: 18px;
+      font-size: 16px;
       margin: 0;
     }
 
     /* BANNER */
     .banner img {
       width: 100%;
-      max-height: 300px;
+      height: 280px;
       object-fit: cover;
     }
 
@@ -44,26 +44,35 @@
       padding: 20px;
     }
 
-    .cta a {
+    .desc {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    /* BUTTONS */
+    .btn {
       display: block;
       margin: 10px auto;
       padding: 15px;
       width: 90%;
-      max-width: 300px;
+      max-width: 320px;
       text-align: center;
       color: white;
-      text-decoration: none;
       border-radius: 8px;
+      text-decoration: none;
+      font-size: 16px;
     }
 
-    .call { background: green; }
+    .call { background: #28a745; }
     .zalo { background: #0068ff; }
     .fb { background: #1877f2; }
 
+    /* GALLERY */
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
       gap: 10px;
+      margin-top: 20px;
     }
 
     .gallery img {
@@ -71,35 +80,51 @@
       border-radius: 8px;
     }
 
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #777;
+      font-size: 14px;
+    }
   </style>
 </head>
 
 <body>
 
-<!-- HEADER + LOGO -->
+<!-- HEADER -->
 <header>
-  <img src="public/logo.png" alt="Logo">
+  <img src="public/logo.png" alt="logo">
   <h1>Sửa Chữa Đồ Gỗ Tận Nơi HCM</h1>
 </header>
 
 <!-- BANNER -->
 <div class="banner">
-  <img src="public/banner.jpg" alt="Banner">
+  <img src="public/banner.webp" alt="banner">
 </div>
 
 <div class="container">
 
-  <h2>Dịch vụ của chúng tôi</h2>
-  <p>Sửa chữa đồ gỗ tận nơi - nhanh chóng - uy tín tại TP.HCM</p>
-
-  <!-- CTA -->
-  <div class="cta">
-    <a class="call" href="tel:0971282878">📞 Gọi ngay</a>
-    <a class="zalo" href="zalo://zaloapp.com/qr/p/9wgvd001cwde">💬 Zalo</a>
-    <a class="fb" href="https://facebook.com/suachuadogohcm.vn">👍 Facebook</a>
+  <div class="desc">
+    <h2>Dịch vụ sửa đồ gỗ tận nơi</h2>
+    <p>Uy tín - Nhanh chóng - Giá hợp lý tại TP.HCM</p>
   </div>
 
-  <h2>Hình ảnh dịch vụ</h2>
+  <!-- CALL -->
+  <a class="btn call" href="tel:0933227017">
+    📞 Gọi ngay: 0933 227 017
+  </a>
+
+  <!-- ZALO -->
+  <a class="btn zalo" href="#" onclick="goToZalo(event)">
+    💬 Chat Zalo
+  </a>
+
+  <!-- FACEBOOK -->
+  <a class="btn fb" href="https://facebook.com/suachuadogohcm.vn" target="_blank">
+    👍 Facebook
+  </a>
+
+  <h3 style="text-align:center; margin-top:30px;">Hình ảnh dịch vụ</h3>
 
   <div class="gallery">
     <img src="public/img1.jpg">
@@ -109,6 +134,33 @@
   </div>
 
 </div>
+
+<footer>
+  © 2026 - suachuadogohcm.vn
+</footer>
+
+<!-- ZALO SCRIPT -->
+<script>
+function goToZalo(event) {
+    event.preventDefault();
+
+    var phone = "0933227017";
+    var qrCodeId = "qu8ifitjj72m";
+
+    var isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+    var isAndroid = /Android/i.test(navigator.userAgent);
+
+    if (isIOS) {
+        window.location.href = "https://zalo.me/" + phone;
+    } 
+    else if (isAndroid) {
+        window.location.href = "zalo://zaloapp.com/qr/p/" + qrCodeId;
+    } 
+    else {
+        window.open("https://zalo.me/" + phone, "_blank");
+    }
+}
+</script>
 
 </body>
 </html>
